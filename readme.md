@@ -12,7 +12,7 @@ FileSystemUpdatesStorage implements ExpoUpdatesStorageApi based on files.
 you need output "expo export --experimental-bundle" to UPDATES folder under ${UPDATES}/${version}/${datetime:20230505}/[assets|bundles|metadata.json|expoConfig.json].
 ```
 const express = require('express')
-const {FileSystemUpdatesStorage, createUpdatesServer, ExpoUpdatesStorageApi}=require("expo-updates-server")
+const {FileSystemUpdatesStorage, manifest, assets}=require("expo-updates-server")
 
 const server=express()
 
@@ -22,9 +22,8 @@ const updatesStorage=new FileSystemUpdatesStorage({
     PRIVATE_KEY_PATH: "/users/test/private-key.pem",
 })
 
-const updatesServer=createUpdatesServer(updatesStorage)
-
-server.use("/updates", updatesServer)
+server.use("/updates/manifest", manifest(updatesStorage))
+server.use("/updates/assets", assets(updatesStorage))
 
 ```
 
