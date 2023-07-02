@@ -1,17 +1,16 @@
 {
 	"name": "expo-updates-server",
-	"version": "1.0.2",
+	"version": "1.0.4",
 	"license": "MIT",
 	"main": "lib/index.js",
 	"dependencies": {
 		"form-data": "^4.0.0",
 		"mime": "^2.5.2",
+		"node-fetch": "^3.3.1",
 		"nullthrows": "^1.1.1",
 		"structured-headers": "^0.4.1"
 	},
-	"scripts": {
-		
-	},
+	"scripts": {},
 	"devDependencies": {
 		"@types/node": "^20.3.2",
 		"custom-expo-updates-server": "https://github.com/expo/custom-expo-updates-server",
