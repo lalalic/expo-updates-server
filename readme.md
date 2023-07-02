@@ -64,4 +64,9 @@ class MyExpoUpdatesStorage extends ExpoUpdatesStorageApi{
 	}
 }
 ```
+or if you already have manifest somewhere
+```
+const {ExpoUpdatesStorageApi}=require("expo-updates-server")
 
+const storage=ExpoUpdatesStorageApi.fromManifestURI(({runtimeVersion, platform})=>`https://mydomain.com/updates/${runtimeVersion}/${platform}/manifest.json`)
+```
